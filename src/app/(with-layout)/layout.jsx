@@ -1,11 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const WidthLayout = ({ children }) => {
   return (
     <div>
-      <nav>
-        <a href="">home</a>
-      </nav>
+      <Navbar></Navbar>
       {children}
       <footer>fotter</footer>
     </div>
