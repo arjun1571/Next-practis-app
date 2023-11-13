@@ -1,9 +1,10 @@
-import Image from 'next/image'
+
+import HeroSlider from './HeroSlider'
 
 export default function Home() {
   return (
     <div>
-      <h1>home</h1>
+      <HeroSlider></HeroSlider>
     </div>
   )
 }

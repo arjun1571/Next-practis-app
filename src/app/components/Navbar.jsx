@@ -1,6 +1,7 @@
-import Link from 'next/link';
+
 import React from 'react';
 import NavLink from './NavLink';
+import useAuth from '../hooks/useAuth';
 
 const navLinks =[
     {
@@ -27,16 +28,19 @@ const navLinks =[
 ]
 
 const Navbar = () => {
+    const {user} = useAuth
+    const {uid,displayName} = user || {}
     return (
-        <nav className='flex justify-between items-center container mx-auto'>
+        <nav className='flex justify-between items-center container mx-auto bg-black text-white'>
             <div>
                 <h1 className='font-bold text-xl'>My Next App</h1>
             </div>
-            <div className='flex items-center '>
+            <div className='flex items-center py-5'>
                 {
                     navLinks.map(({path,title})=><ul className=''><li key={path} className='mx-2'><NavLink activeClassName={"text-blue-500"} exact={path === "/"} href={path}>{title}</NavLink></li></ul>
                     )
                 }
+                <h1>{displayName}</h1>
             </div>
         </nav>
     );
